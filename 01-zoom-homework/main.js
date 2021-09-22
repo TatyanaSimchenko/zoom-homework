@@ -3,11 +3,11 @@ const coffe = 123.965;
 const meat = 90.2345;
 
 // Максимальне число:
-const maxPrise = Math.max(15.678, 123.965, 90.2345);
+const maxPrise = Math.max(fruit, coffe, meat);
 console.log(maxPrise);
 
 // Мінімальне число:
-const minPrise = Math.min(15.678, 123.965, 90.2345);
+const minPrise = Math.min(fruit, coffe, meat);
 console.log(minPrise);
 
 // Вартість всіх товарів:
@@ -23,11 +23,8 @@ const roundToSumPrise = Math.round(sumPrice / 100) * 100;
 console.log(roundToSumPrise);
 
 // Парне чи не парне:
-if (roundToSumPrise % 2 == 0) {
-  console.log("even!");
-} else {
-  console.log("odd!");
-}
+const isEvenNum = roundToSumPrise % 2 === 0 ? true : false;
+console.log(isEvenNum);
 
 //  Сума решти:
 const delivery = 500 - sumPrice;
@@ -58,7 +55,7 @@ button.onclick = function () {
   Вартість всіх товарів: ${sumPrice} <br/>\n
   Округлення в меньшу сторону: ${floorSumPrise} <br/>\n
   Сума округлена до сотень: ${roundToSumPrise} <br/>\n
-  Парне: true <br/>\n
+  Парне: ${isEvenNum} <br/>\n
   Сума решти: ${delivery} <br/>\n
   Середнє значення: ${averageSum} <br/>\n
   Випадкова знижка: ${discount} <br/>\n
