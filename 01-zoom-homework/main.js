@@ -19,7 +19,7 @@ const floorSumPrise = Math.floor(fruit) + Math.floor(coffe) + Math.floor(meat);
 console.log(floorSumPrise);
 
 //  Сума округлена до сотень:
-let roundToSumPrise = Math.round(sumPrice / 100) * 100;
+const roundToSumPrise = Math.round(sumPrice / 100) * 100;
 console.log(roundToSumPrise);
 
 // Парне чи не парне:
@@ -30,11 +30,11 @@ if (roundToSumPrise % 2 == 0) {
 }
 
 //  Сума решти:
-let delivery = 500 - sumPrice;
+const delivery = 500 - sumPrice;
 console.log(delivery);
 
 //  Середнє значення:
-let averageSum = (sumPrice / 3).toFixed(2);
+const averageSum = (sumPrice / 3).toFixed(2);
 console.log(averageSum);
 
 //  Випадкова знижка:
@@ -43,17 +43,15 @@ const sumDiscount = (sumPrice - sumPrice * (discount / 100)).toFixed(2);
 console.log(sumDiscount);
 
 //  Чистий прибуток:
-let clientCost = (Math.floor(sumPrice) * discount) / 100;
+const clientCost = (Math.floor(sumPrice) * discount) / 100;
 console.log(clientCost);
-let costPrice = Math.floor(sumPrice) / 2;
-
-let profit = (costPrice - clientCost).toFixed(2);
-
+const costPrice = Math.floor(sumPrice) / 2;
+const profit = (costPrice - clientCost).toFixed(2);
 console.log(profit);
 
 // Шаблонний рядок:
-let button = document.getElementById("btn");
-let div = document.getElementById("out");
+const button = document.getElementById("btn");
+const div = document.getElementById("out");
 button.onclick = function () {
   div.innerHTML = `Максимальне число:  ${maxPrise} <br/>\n
   Мінімальне число: ${minPrise} <br/>\n
