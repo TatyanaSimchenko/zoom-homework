@@ -46,7 +46,9 @@ console.log(sumDiscount);
 let clientCost = (Math.floor(sumPrice) * discount) / 100;
 console.log(clientCost);
 let costPrice = Math.floor(sumPrice) / 2;
+
 let profit = (costPrice - clientCost).toFixed(2);
+
 console.log(profit);
 
 // Шаблонний рядок:
@@ -61,7 +63,7 @@ button.onclick = function () {
   Парне: true <br/>\n
   Сума решти: ${delivery} <br/>\n
   Середнє значення: ${averageSum} <br/>\n
-  Випадкова знижка: ${sumDiscount} <br/>\n
+  Випадкова знижка: ${discount} <br/>\n
   Чистий прибуток: ${profit} <br/>\n
   `;
 };
