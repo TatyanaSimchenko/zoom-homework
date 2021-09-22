@@ -23,7 +23,7 @@ const roundToSumPrise = Math.round(sumPrice / 100) * 100;
 console.log(roundToSumPrise);
 
 // Парне чи не парне:
-const isEvenNum = roundToSumPrise % 2 === 0 ? true : false;
+const isEvenNum = floorSumPrise % 2 === 0 ? true : false;
 console.log(isEvenNum);
 
 //  Сума решти:
