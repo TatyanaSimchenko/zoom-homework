@@ -21,7 +21,7 @@ const choiceNum = confirm("Пропускати парні числа?");
 let sum = 0;
 for (let i = n; i <= m; i++) {
   if (choiceNum && i % 2 === 0) {
-    sum += 0;
+    continue;
   } else {
     sum += i;
   }
