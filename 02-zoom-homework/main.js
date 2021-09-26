@@ -5,7 +5,8 @@ const n = parseInt(+prompt("Введи значення числа N"));
 if (n % 1 === 0) {
   console.log("OK");
 } else {
-  alert("Перезавантаж сторінку і введи число!");
+  alert("Не число!!! Сторінку буде перезавантажено!");
+  window.location.reload();
 }
 
 const m = parseInt(+prompt("Введи значення числа M"));
@@ -13,7 +14,8 @@ const m = parseInt(+prompt("Введи значення числа M"));
 if (m % 1 === 0) {
   console.log("OK");
 } else {
-  alert("Перезавантаж сторінку і введи число!");
+  alert("Не число!!! Сторінку буде перезавантажено!");
+  window.location.reload();
 }
 
 const choiceNum = confirm("Пропускати парні числа?");
