@@ -1,8 +1,20 @@
 "use strict";
 
-const n = parseInt(+prompt("Введіть значення числа N"));
+const n = parseInt(+prompt("Введи значення числа N"));
 
-const m = parseInt(+prompt("Введіть значення числа M"));
+if (n % 1 === 0) {
+  console.log("OK");
+} else {
+  alert("Перезавантаж сторінку і введи число!");
+}
+
+const m = parseInt(+prompt("Введи значення числа M"));
+
+if (m % 1 === 0) {
+  console.log("OK");
+} else {
+  alert("Перезавантаж сторінку і введи число!");
+}
 
 const choiceNum = confirm("Пропускати парні числа?");
 
