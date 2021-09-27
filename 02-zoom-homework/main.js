@@ -1,28 +1,26 @@
 "use strict";
 
-const n = parseInt(+prompt("Введи значення числа N"));
+let n;
+let m;
 
-if (n % 1 === 0) {
-  console.log("OK");
-} else {
-  alert("Не число!!! Сторінку буде перезавантажено!");
-  window.location.reload();
+do {
+  n = parseInt(prompt("Введи значення числа N"));
+} while (!Number.isInteger(n));
+
+do {
+  m = parseInt(prompt("Введи значення числа M"));
+} while (!Number.isInteger(m));
+
+if (n > m) {
+  [n, m] = [m, n];
 }
+console.log(n, m);
 
-const m = parseInt(+prompt("Введи значення числа M"));
-
-if (m % 1 === 0) {
-  console.log("OK");
-} else {
-  alert("Не число!!! Сторінку буде перезавантажено!");
-  window.location.reload();
-}
-
-const choiceNum = confirm("Пропускати парні числа?");
+const skipEvenNum = confirm("Пропускати парні числа?");
 
 let sum = 0;
 for (let i = n; i <= m; i++) {
-  if (choiceNum && i % 2 === 0) {
+  if (skipEvenNum && i % 2 === 0) {
     continue;
   } else {
     sum += i;
