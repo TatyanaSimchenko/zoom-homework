@@ -104,11 +104,12 @@ const isPalindrom = (string) => {
 
 //...видаляє з речення букви, які зустрічаються більше одного разу
 
-const deleteDuplicateLetter = (str) => {
+const deleteDuplicateLetter = (string) => {
+  const str = string.toLowerCase();
   let result = "";
 
   for (let i = 0; i < str.length; i++) {
-    if (str.toLowerCase().replaceAll(str[i], "").length === str.length - 1) {
+    if (str.replaceAll(str[i], "").length === str.length - 1) {
       result += str[i];
     }
   }
