@@ -108,7 +108,7 @@ const deleteDuplicateLetter = (str) => {
   let result = "";
 
   for (let i = 0; i < str.length; i++) {
-    if (str.toLowerCase().split(str[i]).length - 1 === 1 && str[i] !== "") {
+    if (str.toLowerCase().replaceAll(str[i], "").length === str.length - 1) {
       result += str[i];
     }
   }
