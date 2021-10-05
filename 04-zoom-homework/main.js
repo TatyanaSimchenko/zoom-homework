@@ -37,9 +37,9 @@ const getPairs = (students) => {
 
 const getPairsWithThems = (pairs, themes) => {
   const arrPairs = pairs.map((item) => item.join(" і "));
-  const pairsWithTemes = arrPairs.map((item, i) => [item, themes[i]]);
+  const pairsWithThemes = arrPairs.map((item, i) => [item, themes[i]]);
 
-  return pairsWithTemes;
+  return pairsWithThemes;
 };
 
 // №3 Зіставте оцінки (marks) зі студентом (students): [["Олександр", 4], [...], [...] ]
@@ -49,21 +49,24 @@ const getStudentMark = (students, marks) =>
 
 // №4 Поставте кожній парі випадкову оцінку (від 1 до 5) за проєкт (тут функція буде не чистою, але не повинна мутувати масив): [["Олександр і Олена", "Теорія автоматів", 5], [...], [...] ]
 
-const getPairsRandomMark = (pairs) =>
-  pairs.map((item, i) => [...pairs[i], Math.floor(Math.random() * 5 + 1)]);
+const getThemesPairsRandomMarks = (pairsThemes) =>
+  pairsThemes.map((pairTheme) => [
+    ...pairTheme,
+    Math.round(Math.random() * (5 - 1) + 1),
+  ]);
 
 const pairs = getPairs(students);
-const pairsTemes = getPairsWithThems(pairs, themes);
+const pairsThemes = getPairsWithThems(pairs, themes);
 const getMarks = getStudentMark(students, marks);
-const getPairsMark = getPairsRandomMark(pairs);
+const pairWithThemeMark = getThemesPairsRandomMarks(pairsThemes);
 
 console.log(pairs);
-console.log(pairsTemes);
+console.log(pairsThemes);
 console.log(getMarks);
-console.log(getPairsMark);
+console.log(pairWithThemeMark);
 
 const div = document.getElementById("out");
 div.innerHTML = `№1: ${pairs} <br/>\n
- №2: ${pairsTemes} <br/>\n
+ №2: ${pairsThemes} <br/>\n
  №3: ${getMarks} <br/>\n
- №4: ${getPairsMark} <br/>\n`;
+ №4: ${pairWithThemeMark} <br/>\n`;
