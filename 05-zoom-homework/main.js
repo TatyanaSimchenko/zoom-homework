@@ -116,8 +116,8 @@ console.log(dividedByFive);
 // Приклад: replaceBadWords("Are you fucking kidding?") -> "Are you ****ing kidding?" Приклад: replaceBadWords("Holy shit!") -> "Holy ****!" Приклад: replaceBadWords("It's bullshit!") -> "It's bull****!"
 
 const replaceBadWords = (string) => {
-  const badWord = ["shit", "fuck", "superfoo"];
-  let badString = string.toLowerCase();
+  const badWord = ["shit", "fuck"];
+  let badString = string;
 
   for (let i = 0; i < badWord.length; i++) {
     const length = badWord[i].length;
@@ -127,9 +127,7 @@ const replaceBadWords = (string) => {
   return badString;
 };
 
-const getReplaceBadWords = replaceBadWords(
-  "Superfoo! Are you fucking  kidding?"
-);
+const getReplaceBadWords = replaceBadWords("Are you fucking  kidding?");
 console.log(getReplaceBadWords);
 
 // №8 Створіть функцію divideByThree(word), яка розбиває кожне слово на умовні склади по 3 букви. Якщо букв менше трьох – не розбиває. Пробіли завжди видаляються. Рядок приводится до нижнього регістру. Приклад: divideByThree("Commander) -> ["com", "man", "der"] Приклад: divideByThree("live") -> ["liv", "e"]
