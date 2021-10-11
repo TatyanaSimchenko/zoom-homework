@@ -6,7 +6,7 @@ const getRandomArray = (length, min, max) => {
   let randomArray = [];
 
   for (let i = 0; i < length; i++) {
-    randomArray.push(Math.floor(Math.random() * (max - min) + min));
+    randomArray.push(Math.floor(Math.random() * (max - min) + min + 1));
   }
   return randomArray;
 };
@@ -65,8 +65,9 @@ console.log(median);
 // №4 Створіть функцію filterEvenNumbers(...numbers) – яка фільтрує парні числа передані як аргументи функції
 // Приклад: filterEvenNumbers(1, 2, 3, 4, 5, 6) -> [1, 3, 5]
 
-const filterEvenNumbers = (...numbers) =>
-  numbers.filter((number) => number % 2 !== 0);
+const filterEvenNumbers = (...numbers) => {
+  return numbers.filter((number) => number % 2 !== 0);
+};
 
 const filterEvenNum = filterEvenNumbers(1, 2, 3, 4, 5, 6);
 console.log(filterEvenNum);
@@ -80,11 +81,11 @@ const countPositiveNumbers = (...numbers) => {
       sum++;
     }
     return sum;
-  });
+  }, 0);
   return positiveNumbers;
 };
 
-const countPositiveNum = countPositiveNumbers(1, -2, 3, -4, -5, 6);
+const countPositiveNum = countPositiveNumbers(5, -1, 3, 2);
 console.log(countPositiveNum);
 
 // №6 Створіть функцію getDividedByFive(...numbers) – яка відфільтрує усі елементи в масиві та залишить тільки ті, які діляться на ціло на 5
@@ -119,10 +120,15 @@ const replaceBadWords = (string) => {
   const badWord = ["shit", "fuck"];
   let badString = string;
 
-  for (let i = 0; i < badWord.length; i++) {
-    const length = badWord[i].length;
-    const starHide = "*".repeat(length);
-    badString = badString.split(badWord[i]).join(starHide);
+  for (let word of badWord) {
+    let length = word.length;
+    let starHide = "*".repeat(length);
+    if (string.toLowerCase().includes(word)) {
+      badString = badString
+        .toLowerCase()
+        .replaceAll(word.toLowerCase(), starHide);
+    }
+    badString = badString[0].toUpperCase() + badString.slice(1);
   }
   return badString;
 };
@@ -130,18 +136,23 @@ const replaceBadWords = (string) => {
 const getReplaceBadWords = replaceBadWords("Are you fucking  kidding?");
 console.log(getReplaceBadWords);
 
+/* Можна використати і такий варіант:
+  for (let i = 0; i < badWord.length; i++) {
+    const length = badWord[i].length;
+    const starHide = "*".repeat(length);
+    badString = badString.split(badWord[i]).join(starHide);
+  } */
+
 // №8 Створіть функцію divideByThree(word), яка розбиває кожне слово на умовні склади по 3 букви. Якщо букв менше трьох – не розбиває. Пробіли завжди видаляються. Рядок приводится до нижнього регістру. Приклад: divideByThree("Commander) -> ["com", "man", "der"] Приклад: divideByThree("live") -> ["liv", "e"]
 
 const divideByThree = (word) => {
-  let lowerCaseWord = word.toLowerCase();
+  let lowerCaseWord = word.toLowerCase().replaceAll(" ", "");
   let result = [];
 
   if (lowerCaseWord.length > 3) {
     for (let i = 0; i < lowerCaseWord.length; i += 3) {
       if (lowerCaseWord.length - i >= 3) {
-        result.push(
-          lowerCaseWord[i] + lowerCaseWord[i + 1] + lowerCaseWord[i + 2]
-        );
+        result.push(lowerCaseWord.slice(i, i + 3));
       } else {
         result.push(lowerCaseWord.substring(i));
       }
@@ -151,7 +162,7 @@ const divideByThree = (word) => {
   }
   return result;
 };
-
+// lowerCaseWord[i] + lowerCaseWord[i + 1] + lowerCaseWord[i + 2]
 const getDivideByThree = divideByThree("Commander");
 console.log(getDivideByThree);
 
