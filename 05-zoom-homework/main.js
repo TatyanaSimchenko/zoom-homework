@@ -91,8 +91,9 @@ console.log(countPositiveNum);
 // №6 Створіть функцію getDividedByFive(...numbers) – яка відфільтрує усі елементи в масиві та залишить тільки ті, які діляться на ціло на 5
 // Приклад: getDividedByFive(6, 2, 55, 11, 78, 2, 55, 77, 57, 87, 23, 2, 56, 3, 2) -> [55, 55]
 
-const getDividedByFive = (...numbers) =>
-  numbers.filter((number) => number % 5 === 0);
+const getDividedByFive = (...numbers) => {
+  return numbers.filter((number) => number % 5 === 0);
+};
 
 const dividedByFive = getDividedByFive(
   6,
