@@ -43,8 +43,7 @@ const getSubjects = (student) => {
   return subjectArr;
 };
 
-const studentSubjects = getSubjects(students[0]);
-console.log(studentSubjects);
+console.log(getSubjects(students[0]));
 
 /* №2 Створіть функцію getAverageMark(students[0]) --> 3.79 – яка поверне середню оцінку по усім предметам для переданого студента НЕ МАСИВА СТУДЕНТІВ. Оцінку округліть до 2ого знаку. Можна використовувати функції, написані у попередніх домашніх завданнях :) */
 
@@ -58,8 +57,8 @@ const getAverageMark = (student) => {
   }
   return +getAverage.toFixed(2);
 };
-const averageMark = getAverageMark(students[0]);
-console.log(averageMark);
+
+console.log(getAverageMark(students[0]));
 
 /* №3 Створіть функцію getStudentInfo(students[0]) --> { "course": 3, "name": "Tanya", "averageMark": 3.79} – яка повертає інформацію загального виду по переданому студенту (вам знадобиться функція з попереднього завдання). ПОвинна бути виведена інформація: курс, ім'я, середня оцінка. */
 
@@ -75,13 +74,50 @@ console.log(getStudentInfo(students[0]));
 
 /* №4 Ствроіть функцію getStudentsNames(students) --> ["Anton", "Tanya, "Victor"] – яка повертає імена студентів у алфавітному порядку. */
 
-const getStudentsNames = (students) => students.map((item) => item.name).sort();
+const getStudentsNames = (students) => {
+  return students.map((student) => student.name).sort();
+};
 
-const studentsName = getStudentsNames(students);
-console.log(studentsName);
+console.log(getStudentsNames(students));
 
 /* №5 Створіть функцію getBestStudent(students) --> "Anton" – яка повертає кращого студента зі списку по показнику середньої оцінки. */
 
-// const getBestStudent = (students) =>
+const getBestStudent = (students) => {
+  return students.reduce((a, b) =>
+    getAverageMark(a) > getAverageMark(b) ? a : b
+  ).name;
+};
+
+console.log(getBestStudent(students));
 
 /* №6 Створіть функцію calculateWordLetters("тест") --> { "т": 2, "е": 1, "с": 1 } – яка повертає обє'кт, в якому ключі це букви у слові, а значення – кількість їх повторень. */
+
+const calculateWordLetters = (word) => {
+  const lowerCaseWord = word.toLowerCase().split("");
+  const result = {};
+
+  lowerCaseWord.map((letter) =>
+    !result[letter] ? (result[letter] = 1) : result[letter]++
+  );
+
+  return result;
+};
+
+console.log(calculateWordLetters("тест"));
+
+const div = document.getElementById("out");
+div.innerHTML = `
+Результати в консолі!<br/>\n
+<br/>\n
+№1: Створіть функцію getSubjects(students[0] --> ["Math", "Algorithms", "Data science"] - яка повертає список предметів для конкретного студента. Зверніть увагу – назву предмету необхідно повертати з великої літери, а _ – замінити на пробіл <br/>\n
+<br/>\n
+№2: Створіть функцію getAverageMark(students[0]) --> 3.79 – яка поверне середню оцінку по усім предметам для переданого студента НЕ МАСИВА СТУДЕНТІВ. Оцінку округліть до 2ого знаку. Можна використовувати функції, написані у попередніх домашніх завданнях :) <br/>\n
+<br/>\n
+№3: Створіть функцію getStudentInfo(students[0]) --> { "course": 3, "name": "Tanya", "averageMark": 3.79} – яка повертає інформацію загального виду по переданому студенту (вам знадобиться функція з попереднього завдання). ПОвинна бути виведена інформація: курс, ім'я, середня оцінка. <br/>\n
+<br/>\n
+№4: Ствроіть функцію getStudentsNames(students) --> ["Anton", "Tanya, "Victor"] – яка повертає імена студентів у алфавітному порядку. <br/>\n
+<br/>\n
+№5: Створіть функцію getBestStudent(students) --> "Anton" – яка повертає кращого студента зі списку по показнику середньої оцінки. <br/>\n
+<br/>\n
+№6: Створіть функцію calculateWordLetters("тест") --> { "т": 2, "е": 1, "с": 1 } – яка повертає обє'кт, в якому ключі це букви у слові, а значення – кількість їх повторень. <br/>\n
+`;
