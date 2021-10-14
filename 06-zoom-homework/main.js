@@ -38,7 +38,7 @@ const getSubjects = (student) => {
   for (const key in student.subjects) {
     let subject = key.charAt(0).toLowerCase() + key.substr(1);
     subject = subject.split("_").join(" ");
-    subjectArr.push(subject);
+    subjectArr.push(subject[0].toUpperCase() + subject.slice(1));
   }
   return subjectArr;
 };
