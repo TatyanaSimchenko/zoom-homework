@@ -90,7 +90,7 @@ class BudgetStudent extends Student {
     if (this.getAverageMark() >= 4) {
       console.log("Ви отримали 1400 грн. стипендії");
     } else {
-      console.log("Ваш середній бал недостатній для отримання стипендіїї");
+      console.log("Ваш середній бал недостатній для отримання стипендії");
     }
   }
 }
@@ -101,3 +101,6 @@ const budgetStudent = new BudgetStudent(
   "Остап Бендер"
 );
 budgetStudent.marks = 5;
+
+const div = document.getElementById("out");
+div.innerHTML = `Результати в консолі!`;
