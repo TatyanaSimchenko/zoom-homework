@@ -15,29 +15,35 @@ class Student {
     this.course = course;
     this.fullName = fullName;
     this.isStudy = true;
-    this.isMarks = [];
+    this.isMarks = [5, 4, 4, 5];
   }
+
   getInfo() {
     return `Студент ${this.course}го курсу ${this.university}, ${this.fullName}`;
   }
+
   get marks() {
     return this.isStudy ? this.isMarks : null;
   }
+
   set marks(mark) {
     if (this.isStudy) {
       return this.isMarks.push(mark);
     }
     return null;
   }
+
   getAverageMark() {
     if (this.isStudy) {
       return this.isMarks.reduce((sum, a) => (sum += a)) / this.isMarks.length;
     }
     return null;
   }
+
   dismiss() {
     this.isStudy = false;
   }
+
   recover() {
     this.isStudy = true;
   }
@@ -48,11 +54,6 @@ const student = new Student(
   1,
   "Остап Бендер"
 );
-
-student.marks = 5;
-student.marks = 4;
-student.marks = 4;
-student.marks = 5;
 
 console.log(student.getInfo());
 console.log(student.marks);
@@ -69,8 +70,6 @@ student.recover();
 console.log("студента поновлено");
 student.marks = 5;
 student.marks = 4;
-student.marks = 4;
-student.marks = 5;
 console.log(student.marks);
 
 /*ADVANCED
