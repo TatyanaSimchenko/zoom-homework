@@ -30,7 +30,6 @@ class Student {
     if (this.isStudy) {
       return this.isMarks.push(mark);
     }
-    return null;
   }
 
   getAverageMark() {
