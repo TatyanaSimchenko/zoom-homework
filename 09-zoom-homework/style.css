@@ -1,0 +1,43 @@
+body {
+  background-color: rgb(6, 6, 114);
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+h1 {
+  font-size: 36px;
+  font-family:sans-serif;
+  color: #fff;
+  text-align: center;
+}
+
+ul {
+  list-style: none;
+}
+
+li {
+  margin-top: 15px;
+  font-size: 20px;
+  font-family:sans-serif;
+  color: #fff;
+  padding: 0px 15px;
+}
+
+span {
+  font-weight: 700;
+}
+
+.container {
+  width: 250px;
+  height: 250px;
+  position: relative;
+  border: 6px solid #fff;
+}
+
+.square {
+  width: 50px;
+  height: 50px;
+  position: absolute;
+}
