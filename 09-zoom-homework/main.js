@@ -17,24 +17,28 @@ const ul = `
 </ul>`;
 div.innerHTML = ul;
 
-const divWrapper = document.createElement("div");
-divWrapper.classList.add("container");
-body.appendChild(divWrapper);
+const sqareContainer = (className) => {
+  let div = document.querySelector(`${className}`);
+  if (div) {
+    div.innerHTML = " ";
+  } else {
+    div = document.createElement("div");
+    div.classList.add("container");
+    document.body.appendChild(div);
+  }
+  return div;
+};
 
 const generateBlocks = () => {
-  const squareContainer = document.querySelector(".container");
+  const squareContainerBlock = sqareContainer(".container");
   const squareSize = 50;
 
   for (let i = 0; i < 25; i++) {
     const square = document.createElement("div");
     square.classList.add("square");
-    const left = i % 5;
-    const top = (i - left) / 5;
-    square.style.left = `${left * squareSize}px`;
-    square.style.top = `${top * squareSize}px`;
     square.style.background =
       "#" + Math.floor(Math.random() * 0xffffff).toString(16);
-    squareContainer.append(square);
+    squareContainerBlock.append(square);
   }
 };
 
