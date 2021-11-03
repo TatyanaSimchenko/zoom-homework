@@ -2,12 +2,12 @@
 
 function getRandomChinese(length) {
   return new Promise(function (resolve, reject) {
-    let i = 0;
+    let i = 1;
     const arr = [];
 
-    while (i < length) {
+    while (i <= length) {
       setTimeout(() => {
-        const sign = String(Date.now()).substr(8);
+        const sign = String(Date.now() % 100000);
         arr.push(String.fromCharCode(sign));
 
         if (arr.length === length) {
