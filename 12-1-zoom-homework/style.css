@@ -10,9 +10,11 @@ body {
 }
 
 .header {
-margin: 35px 0;
-display: flex;
-justify-content: center;
+  width: 100%;
+  max-width: 1200px;
+  margin: 35px 0;
+  display: flex;
+  justify-content: center;
 }
 
 img {
@@ -83,6 +85,8 @@ img {
 }
 
 .film__list {
+  width: 100%;
+  max-width: 1200px;
   display: flex;
   flex-wrap: wrap;
   align-items: center;
@@ -129,6 +133,10 @@ img {
 }
 .card__subtitle:last-of-type{
   margin-bottom: 20px;
+}
+.about__info {
+  max-width: 1200px;
+  width: 100%;
 }
 
 .about__box {
