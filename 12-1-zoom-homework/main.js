@@ -24,7 +24,7 @@ const getPeople = () => {
     filmInput.value === "5" ||
     filmInput.value === "6"
   ) {
-    filmList.innerHTML = "Loading...";
+    document.querySelector(".overlay").classList.add("active");
   } else {
     filmList.innerHTML = "Please, enter from 1 to 6!";
     return;
@@ -61,6 +61,7 @@ const getInfo = (link) => {
     <p>Gender: ${gender}</p>
     </div>`;
       filmList.innerHTML += allPersonInfo;
+      document.querySelector(".overlay").classList.remove("active");
     })
     .catch((err) => {
       console.log("Something Wrong!", err);
@@ -78,7 +79,7 @@ const getFilm = () => {
     aboutInput.value === "5" ||
     aboutInput.value === "6"
   ) {
-    filmInfo.innerHTML = "Loading...";
+    document.querySelector(".overlay").classList.add("active");
   } else {
     filmInfo.innerHTML = "Please, enter from 1 to 6!";
     return;
@@ -93,6 +94,7 @@ const getFilm = () => {
       <p>Producer: ${response.data.Producer}</p>
       <p>Episode: ${response.data.episode_id}</p>
       </div>`;
+      document.querySelector(".overlay").classList.remove("active");
     })
     .catch((err) => {
       console.log("Something Wrong!", err);
@@ -101,8 +103,9 @@ const getFilm = () => {
 
 // Planets list
 let currentPage = 1;
+
 const getPlanets = () => {
-  planetsList.innerHTML = "Loading...";
+  document.querySelector(".overlay").classList.add("active");
   countPage.innerHTML = currentPage;
   axios
     .get(`${baseUrl}/planets/?page=${currentPage}`)
@@ -111,6 +114,7 @@ const getPlanets = () => {
         (item) => `<li class="planets-item">${item.name}</li>`
       );
       planetsList.innerHTML = elems.join("");
+      document.querySelector(".overlay").classList.remove("active");
     })
     .catch((err) => {
       console.log("Something Wrong!", err);

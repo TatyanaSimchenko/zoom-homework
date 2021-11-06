@@ -7,6 +7,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>12-1-zoom-homework</title>
   <link rel="stylesheet" href="./style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
 </head>
 
 <body>
@@ -16,25 +19,25 @@
   <main>
     <div class="wrapper">
 
-      <div class="film__container">
-        <h2 class="film__title">Choose film</h2>
+      <div class="container">
+        <h2 class="title film__title">Choose film</h2>
         <input class="film__input" id="input" type="text" placeholder="from 1 to 6">
-        <button class="film__btn" id="people-btn">Personage</button>
+        <button class="btn film__btn" id="people-btn">Personage</button>
         <div class="film__list" id="film-list"></div>
       </div>
 
-      <div class="about__container">
-        <h2 class="about__title">About film</h2>
+      <div class="container">
+        <h2 class="title about__title">About film</h2>
         <input class="film__input" id="about-input" type="text" placeholder="from 1 to 6">
-        <button class="film__btn" id="about-btn">about film</button>
+        <button class="btn film__btn" id="about-btn">about film</button>
         <div class="about__info" id="film-info"></div>
       </div>
 
 
 
-      <div class="planets__container">
-        <h2 class="platets__title">Planets</h2>
-        <button class="planets__btn" id="planets-btn">planets</button>
+      <div class=" planets__container">
+        <h2 class="title platets__title">Planets</h2>
+        <button class="btn planets__btn" id="planets-btn">planets</button>
         <div class="planets__list" id="planets-list"></div>
         <div class="planets__pages">
           <span id="count-page"></span>
@@ -50,7 +53,9 @@
 
   </main>
   <footer>
-
+    <div class="overlay">
+      <div class="loading">loading...</div>
+    </div>
   </footer>
 
 
