@@ -54,7 +54,7 @@ const getInfo = (link) => {
       const avatar = name.replaceAll(" ", "_");
       const allPersonInfo = `
     <div class="card">
-    <img class="avatar" src="./assets/${avatar}.jpeg" alt="avatar"/>
+    <img class="avatar" src="./assets/${avatar}.jpg" alt="avatar"/>
     <p class="card__title">${name}</p>
     <p class="card__subtitle">Birth Year: ${birthYear}</p>
     <p class="card__subtitle">Mass: ${mass}</p>

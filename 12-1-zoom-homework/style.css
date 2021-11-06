@@ -111,6 +111,7 @@ img {
   box-shadow: 0 5px 15px rgb(252, 228, 19);
 }
 .avatar {
+  background:rgb(252, 228, 19);
   position: relative;
   width: 150px;
   height: 150px;
