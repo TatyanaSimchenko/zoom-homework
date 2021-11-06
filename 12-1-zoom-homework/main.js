@@ -13,7 +13,7 @@ const prevBtn = document.getElementById("prev");
 const nextBtn = document.getElementById("next");
 const countPage = document.getElementById("count-page");
 
-// personages info, after choose part of film
+// Personages info, after choose part of film
 
 const getPeople = () => {
   if (
@@ -26,7 +26,7 @@ const getPeople = () => {
   ) {
     document.querySelector(".overlay").classList.add("active");
   } else {
-    filmList.innerHTML = "Please, enter from 1 to 6!";
+    filmList.innerHTML = `<p class="answer">Please, enter from 1 to 6!</p>`;
     return;
   }
   axios
@@ -54,11 +54,11 @@ const getInfo = (link) => {
       const avatar = name.replaceAll(" ", "_");
       const allPersonInfo = `
     <div class="card">
-    <img class="avatar" src="./assets/${avatar}.jpeg" alt="avatar"
-    <h1>${name}</h1>
-    <p>Birth Year: ${birthYear}</p>
-    <p>Mass: ${mass}</p>
-    <p>Gender: ${gender}</p>
+    <img class="avatar" src="./assets/${avatar}.jpeg" alt="avatar"/>
+    <p class="card__title">${name}</p>
+    <p class="card__subtitle">Birth Year: ${birthYear}</p>
+    <p class="card__subtitle">Mass: ${mass}</p>
+    <p class="card__subtitle">Gender: ${gender}</p>
     </div>`;
       filmList.innerHTML += allPersonInfo;
       document.querySelector(".overlay").classList.remove("active");
@@ -81,7 +81,7 @@ const getFilm = () => {
   ) {
     document.querySelector(".overlay").classList.add("active");
   } else {
-    filmInfo.innerHTML = "Please, enter from 1 to 6!";
+    filmInfo.innerHTML = `<p class="answer">Please, enter from 1 to 6!</p>`;
     return;
   }
   axios
@@ -89,10 +89,10 @@ const getFilm = () => {
     .then((response) => {
       filmInfo.innerHTML = `
       <div class="about__box">
-      <h2>${response.data.title}</h2>
-      <p>Release date: ${response.data.release_date}</p>
-      <p>Producer: ${response.data.Producer}</p>
-      <p>Episode: ${response.data.episode_id}</p>
+      <p class="card__title">${response.data.title}</p>
+      <p class="card__subtitle">Release date: ${response.data.release_date}</p>
+      <p class="card__subtitle">Producer: ${response.data.Producer}</p>
+      <p class="card__subtitle">Episode: ${response.data.episode_id}</p>
       </div>`;
       document.querySelector(".overlay").classList.remove("active");
     })
@@ -102,6 +102,7 @@ const getFilm = () => {
 };
 
 // Planets list
+
 let currentPage = 1;
 
 const getPlanets = () => {
@@ -115,21 +116,23 @@ const getPlanets = () => {
       );
       planetsList.innerHTML = elems.join("");
       document.querySelector(".overlay").classList.remove("active");
+      document.querySelector(".prev").classList.add("active");
+      document.querySelector(".next").classList.add("active");
+      if (currentPage === 6) {
+        document.querySelector(".prev").classList.add("active");
+        document.querySelector(".next").classList.remove("active");
+      }
+      if (currentPage === 1) {
+        document.querySelector(".prev").classList.remove("active");
+        document.querySelector(".next").classList.add("active");
+      }
     })
     .catch((err) => {
       console.log("Something Wrong!", err);
     });
 };
 
-getPeople;
-getFilm;
-getPlanets;
-
-filmBtn.addEventListener("click", getPeople);
-aboutBtn.addEventListener("click", getFilm);
-planetsBtn.addEventListener("click", getPlanets);
-
-// prev & next buttons
+// prev & next buttons - current
 
 prevBtn.addEventListener("click", () => {
   if (currentPage === 1) return;
@@ -141,3 +144,11 @@ nextBtn.addEventListener("click", () => {
   currentPage += 1;
   getPlanets();
 });
+
+getPeople;
+getFilm;
+getPlanets;
+
+filmBtn.addEventListener("click", getPeople);
+aboutBtn.addEventListener("click", getFilm);
+planetsBtn.addEventListener("click", getPlanets);

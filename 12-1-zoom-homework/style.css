@@ -11,30 +11,30 @@ body {
 
 .header {
 margin: 35px 0;
+display: flex;
+justify-content: center;
 }
 
-.header__title {
-  font-weight: 900;
-  font-size: 34px;
-  color: rgb(252, 228, 19);
-  text-transform: uppercase;
-  text-shadow: 0 0 10px rgb(252, 228, 19);
-  letter-spacing: 3px;
-  text-align: center;
-    
+img {
+  width: 300px;
+  align-items: center;
 }
 
 .wrapper {
+  width: 100%;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  margin-bottom: 50px;
+  padding: 0 20px;
 }
 
 .container {
   display: flex;
   flex-direction: column;
-  margin-right: 20px;
+  margin-right: 150px;
 }
+
 .title {
   color: rgb(252, 228, 19);
  text-transform: capitalize;
@@ -51,27 +51,169 @@ margin: 35px 0;
   text-transform: lowercase;
   outline: none;
   width: 100%;
-  max-width: 150px;
-  height: 40px;
+  max-width: 300px;
+  height: 35px;
   background:rgb(252, 228, 19);
   box-shadow: 0 0 10px rgb(252, 228, 19);
   border: 3px solid transparent;
 }
+
 .film__input:hover {
   background:rgb(226, 204, 4);
 }
+
 .film__input:active {
   background:rgb(245, 225, 46);
   border:3px solid rgb(245, 225, 46);
 }
 
+.film__list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 300px;
+  height: 300px;
+  box-shadow: 0 0 10px rgb(252, 228, 19);
+  border: 3px solid rgb(252, 228, 19);
+  margin-bottom: 30px;
+  border-radius: 3px;
+  background: rgb(17, 15, 0);
+  transition: box-shadow 0.2s ease;
+}
+
+.card:hover{
+  box-shadow: 0 5px 15px rgb(252, 228, 19);
+}
+.avatar {
+  position: relative;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  margin-bottom: 15px;
+}
+.card__title {
+  font-size: 24px;
+  color: rgb(252, 228, 19);
+  text-transform: uppercase;
+   text-shadow: 0 0 10px rgb(252, 228, 19);
+   margin-bottom: 10px;
+}
+.card__subtitle {
+  font-size: 14px;
+  color: rgb(252, 228, 19);
+  text-transform: capitalize;
+   text-shadow: 0 0 5px rgb(252, 228, 19);
+   margin-bottom: 5px;
+}
+.card__subtitle:last-of-type{
+  margin-bottom: 20px;
+}
+
+.about__box {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 300px;
+  min-height: 300px;
+  box-shadow: 0 0 10px rgb(252, 228, 19);
+  border: 3px solid rgb(252, 228, 19);
+  margin-bottom: 30px;
+  border-radius: 3px;
+  background: rgb(17, 15, 0);
+  transition: box-shadow 0.2s ease ;
+}
+
+.about__box:hover {
+  box-shadow: 0 5px 15px rgb(252, 228, 19);
+}
+
 .btn {
-font-size: 16px;
-font-weight: 400;
-text-transform: uppercase;
-width: 100%;
-  max-width: 165px;
+  margin-bottom: 30px;
+  font-size: 16px;
+  font-weight: 400;
+  color:rgb(245, 225, 46);  
+  text-transform: uppercase;
+  width: 150px;
   height: 40px;
+  background:#000;
+  transition: all 0.8s ease;
+  box-shadow: 0 0 10px rgb(252, 228, 19);
+  border:3px solid rgb(245, 225, 46);
+}
+
+.btn:hover {
+  background:rgb(226, 204, 4);
+  color:#000;
+}
+
+.btn:active {
+  background:rgb(245, 225, 46);
+  color:#000;
+}
+
+.planets__btn {
+  margin-top: 60px;
+}
+
+.prev {
+  display: none;
+}
+
+.prev.active {
+  display: flex;
+}
+
+.next {
+  display: none;
+}
+
+.next.active {
+  display: flex;
+}
+
+.answer {
+  color: rgb(245, 225, 46);
+  font-weight: 700;
+  text-shadow: 0 0 5px rgb(245, 225, 46);
+}
+
+.planets-item {
+  list-style: none;
+  font-size: 20px;
+  font-weight: 700;
+  color: rgb(245, 225, 46);
+  margin-bottom: 15px;
+}
+
+#count-page {
+  font-size: 16px;
+  font-weight: 700;
+  color: rgb(245, 225, 46);
+}
+
+.planets__pages-btn {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: center;
+  margin: 20px 0;
+}
+.prev {
+  justify-content: center;
+  align-items: center;
+  margin-right: 20px;
+}
+
+.next {
+  justify-content: center;
+  align-items: center;
 }
 
 .overlay {
@@ -86,10 +228,12 @@ width: 100%;
   justify-content: center;
   align-items: center;
 }
+
 .overlay.active {
   display: flex;
   cursor: wait;
 }
+
 .loading {
   font-size: 5rem;
   color: #fff;
@@ -99,6 +243,7 @@ width: 100%;
   animation-direction: normal;
   animation-iteration-count: infinite;
 }
+
 @keyframes pulse {
   0% {
     opacity: 1;
