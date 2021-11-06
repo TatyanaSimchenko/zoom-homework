@@ -22,16 +22,31 @@ img {
 
 .wrapper {
   width: 100%;
+  max-width: 1200px;
   display: flex;
   flex-wrap: wrap;
+  flex-direction: column;
+  align-items: center;
   justify-content: center;
   margin-bottom: 50px;
   padding: 0 20px;
 }
 
 .container {
+  width: 100%;
   display: flex;
+  flex-wrap: wrap;
   flex-direction: column;
+  justify-content: center;
+  
+}
+.item {
+  margin-bottom:25px;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: center;
   margin-right: 150px;
 }
 
@@ -43,8 +58,8 @@ img {
   margin-bottom: 20px;
 }
 
-.film__input {
-  margin-bottom: 20px;
+.input {
+  margin: 0 15px 30px;
   font-size: 16px;
   font-weight: 400;
   padding-left: 15px;
@@ -58,11 +73,11 @@ img {
   border: 3px solid transparent;
 }
 
-.film__input:hover {
+.input:hover {
   background:rgb(226, 204, 4);
 }
 
-.film__input:active {
+.input:active {
   background:rgb(245, 225, 46);
   border:3px solid rgb(245, 225, 46);
 }
@@ -70,6 +85,7 @@ img {
 .film__list {
   display: flex;
   flex-wrap: wrap;
+  align-items: center;
   justify-content: space-between;
 }
 .card {
@@ -135,7 +151,6 @@ img {
 }
 
 .btn {
-  margin-bottom: 30px;
   font-size: 16px;
   font-weight: 400;
   color:rgb(245, 225, 46);  
@@ -158,10 +173,6 @@ img {
   color:#000;
 }
 
-.planets__btn {
-  margin-top: 60px;
-}
-
 .prev {
   display: none;
 }
@@ -179,6 +190,9 @@ img {
 }
 
 .answer {
+  width: 100%;
+  margin-bottom: 15px;
+  text-align: center;
   color: rgb(245, 225, 46);
   font-weight: 700;
   text-shadow: 0 0 5px rgb(245, 225, 46);
@@ -189,10 +203,11 @@ img {
   font-size: 20px;
   font-weight: 700;
   color: rgb(245, 225, 46);
-  margin-bottom: 15px;
+  margin: 15px 0;
 }
 
 #count-page {
+  text-align: center;
   font-size: 16px;
   font-weight: 700;
   color: rgb(245, 225, 46);
