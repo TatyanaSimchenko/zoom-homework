@@ -55,3 +55,6 @@ console.log(fontGenerator.next("down").value);
 console.log(fontGenerator.next("down").value);
 console.log(fontGenerator.next("down").value);
 console.log(fontGenerator.next().value);
+
+const div = document.getElementById("out");
+div.innerHTML = `Результати в консолі!`;
