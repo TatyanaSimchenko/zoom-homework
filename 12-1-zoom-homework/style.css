@@ -141,6 +141,9 @@ img {
 .about__info {
   max-width: 1200px;
   width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .about__box {
