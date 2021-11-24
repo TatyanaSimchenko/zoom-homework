@@ -1,9 +1,14 @@
 .App {
   text-align: center;
-  background-color: #282c34;
+  background-color: #fff;
   min-height: 100vh;
 }
-
-
-
-
+.contacts {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+ul {
+  list-style: none;
+  padding: 0;
+}

@@ -1,0 +1,22 @@
+.contact {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  transition: all 0.5s ease;
+}
+
+.contact__name {
+  outline: none;
+  cursor: pointer;
+  background-color: transparent;
+}
+
+.contact__phone {
+  color: #000;
+  text-decoration: none;
+}
+
+.contact__gender {
+  font-style: italic;
+}
