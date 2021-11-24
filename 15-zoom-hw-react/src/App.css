@@ -3,12 +3,29 @@
   background-color: #fff;
   min-height: 100vh;
 }
+
 .contacts {
   display: flex;
   justify-content: center;
   align-items: center;
 }
+
 ul {
   list-style: none;
   padding: 0;
+}
+
+h1 {
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  width: 390px;
+  border-left: 1px solid rgba(0, 0, 0, 0.205);
+  border-right: 1px solid rgba(0, 0, 0, 0.205);
+  margin: 50px auto auto;
 }

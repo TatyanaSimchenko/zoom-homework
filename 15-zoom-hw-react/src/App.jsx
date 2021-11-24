@@ -72,10 +72,11 @@ function App() {
 
   return (
     <div className="App">
-      <h1>Hello Hello</h1>
-      <SearchInput handleInputChange={handleInputChange} />
-      <div className="contacts">
-        <ul>{visibleContact}</ul>
+      <div className="container">
+        <SearchInput handleInputChange={handleInputChange} />
+        <div className="contacts">
+          <ul>{visibleContact}</ul>
+        </div>
       </div>
     </div>
   );
